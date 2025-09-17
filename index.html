@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LKPD_MND</title>
+    <title>LKPD B.Mandarin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,17 +11,20 @@
             background-color: #f4f4f4;
         }
         .quiz-container {
-            max-width: 600px;
-            margin: auto;
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
             background: #fff;
-            padding: 20px;
+            padding: 28px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 12px rgba(0,0,0,0.08);
             text-align: center;
         }
         .quiz-container img {
             display: block;
             margin: 0 auto 15px auto;
+            max-width: 140px;
+            height: auto;
         }
         h1, h2 {
             text-align: center;
@@ -40,19 +43,24 @@
         .question h3 {
             margin-bottom: 10px;
             color: #2c3e50;
+            line-height: 1.5;
+            font-size: 18px; /* perkecil ukuran font soal */
         }
         .options label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 18px; /* perkecil ukuran font jawaban */
         }
         .options input[type="radio"] {
-            margin-right: 10px;
+            margin-right: 8px;
         }
         button {
             display: block;
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #3498db;
             color: white;
             border: none;
@@ -76,6 +84,7 @@
             border-radius: 5px;
             background: #fafafa;
             text-align: left;
+            font-size: 18px; /* review juga sedikit lebih kecil */
         }
         .correct {
             color: green;
@@ -84,6 +93,12 @@
         .wrong {
             color: red;
             font-weight: bold;
+        }
+        @media (max-width: 480px) {
+            .quiz-container { padding: 16px; }
+            .quiz-container img { max-width: 100px; }
+            .question h3 { font-size: 15px; }
+            .options label { font-size: 14px; }
         }
     </style>
 </head>
@@ -154,7 +169,6 @@
                     { text: "Guru punya 1 buah payung.", correct: false }
                 ]
             }
-            // soal lain bisa ditambahkan di sini
         ];
 
         function renderQuiz() {
@@ -165,7 +179,7 @@
                 div.classList.add("question");
 
                 const h3 = document.createElement("h3");
-                h3.innerHTML = `${idx + 1}. ${q.question}`; // pakai innerHTML agar <br> terbaca
+                h3.innerHTML = `${idx + 1}. ${q.question}`;
                 div.appendChild(h3);
 
                 const optionsDiv = document.createElement("div");
