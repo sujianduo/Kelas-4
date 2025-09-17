@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD_MND</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .quiz-container img {
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+            margin: 10px 0;
+        }
+        .section-title {
+            text-align: left;
+            color: darkblue;
+            margin-top: 30px;
+        }
+        .question {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #review {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fafafa;
+            text-align: left;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <img src="SD.png" alt="logo" width="100" height="99">
+        <h1>四年级汉语第三课练习题</h1>
+        <h2>LKPD B. Mandarin Kelas 4 Bab. 3</h2>
+        <h2 class="section-title">选择题 Pilihan ganda</h2>
+        <form id="quiz-form"></form>
+        <div id="result"></div>
+        <div id="review"></div>
+        <button id="retry-btn" style="display:none;">Ulangi Kuis</button>
+    </div>
+
+    <script>
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const questions = [
+            {
+                question: "小强： 你有电脑吗？ nǐ yǒu diàn nǎo ma <br> 小华： 有 yǒu，....",
+                options: [
+                    { text: "我有电脑。wǒ yǒu diàn nǎo", correct: true },
+                    { text: "我没有电脑。wǒ méi yǒu diàn nǎo", correct: false },
+                    { text: "小强有电脑。xiǎo qiánɡ yǒu diàn nǎo", correct: false },
+                    { text: "小强没有电脑。xiǎo qiánɡ méi yǒu diàn nǎo ", correct: false }
+                ]
+            },
+            {
+                question: "小强： 你们学校有没有食堂？nǐ men xué xiào yǒu méi yǒu shí tánɡ <br> 小华： 有 yǒu，....",
+                options: [
+                    { text: "我们学校有食堂。wǒ men xué xiào yǒu shí tánɡ", correct: true },
+                    { text: "我们学校没有食堂。wǒ men xué xiào méi yǒu shí tánɡ", correct: false },
+                    { text: "我家有电脑。wǒ jiā yǒu diàn nǎo", correct: false },
+                    { text: "我家没有电脑。wǒ jiā méi yǒu diàn nǎo", correct: false }
+                ]
+            },
+			{
+                question: "Saya tidak punya komputer.",
+                options: [
+                    { text: "我没有电脑。wǒ méi yǒu diàn nǎo", correct: true },
+                    { text: "我有电脑。wǒ yǒu diàn nǎo", correct: false },
+                    { text: "我没有字典。wǒ méi yǒu zì diǎn", correct: false },
+                    { text: "我有自行车。wǒ yǒu zì xínɡ chē", correct: false }
+                ]
+            },
+			{
+                question: "你家有电脑吗？nǐ jiā yǒu diàn nǎo ma",
+                options: [
+                    { text: "Apakah di rumah kamu ada komputer?", correct: true },
+                    { text: "Apakah di sekolah kamu ada kantin?", correct: false },
+                    { text: "Kamu punya komputer, tidak?", correct: false },
+                    { text: "Apakah kamu punya kamus?", correct: false }
+                ]
+            },
+			{
+                question: "老师有一本字典。lǎo shī yǒu yī běn zì diǎn",
+                options: [
+                    { text: "Guru punya 1 buah kamus.", correct: true },
+                    { text: "Guru punya 1 buah sepeda.", correct: false },
+                    { text: "Guru punya 1 buah komputer.", correct: false },
+                    { text: "Guru punya 1 buah payung.", correct: false }
+                ]
+            }
+            // soal lain bisa ditambahkan di sini
+        ];
+
+        function renderQuiz() {
+            const form = document.getElementById("quiz-form");
+            form.innerHTML = "";
+            shuffle(questions).forEach((q, idx) => {
+                const div = document.createElement("div");
+                div.classList.add("question");
+
+                const h3 = document.createElement("h3");
+                h3.innerHTML = `${idx + 1}. ${q.question}`; // pakai innerHTML agar <br> terbaca
+                div.appendChild(h3);
+
+                const optionsDiv = document.createElement("div");
+                optionsDiv.classList.add("options");
+
+                shuffle(q.options).forEach(opt => {
+                    const label = document.createElement("label");
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = `q${idx}`;
+                    input.value = opt.correct;
+                    label.appendChild(input);
+                    label.append(` ${opt.text}`);
+                    optionsDiv.appendChild(label);
+                });
+
+                div.appendChild(optionsDiv);
+                form.appendChild(div);
+            });
+
+            const btn = document.createElement("button");
+            btn.type = "submit";
+            btn.textContent = "Submit Jawaban";
+            form.appendChild(btn);
+
+            document.getElementById("result").textContent = "";
+            document.getElementById("review").innerHTML = "";
+            document.getElementById("retry-btn").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", renderQuiz);
+
+        document.getElementById("quiz-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            let score = 0;
+            let reviewHTML = "<h3>Review Jawaban:</h3>";
+            questions.forEach((q, idx) => {
+                const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+                const correctAnswer = q.options.find(opt => opt.correct).text;
+                if (selected && selected.value === "true") {
+                    score++;
+                    reviewHTML += `<p>${idx + 1}. ${q.question} - <span class='correct'>Benar (${correctAnswer})</span></p>`;
+                } else {
+                    const chosenText = selected ? selected.parentNode.textContent.trim() : "(tidak dijawab)";
+                    reviewHTML += `<p>${idx + 1}. ${q.question} - <span class='wrong'>Salah</span> (Jawaban Anda: ${chosenText}, Benar: ${correctAnswer})</p>`;
+                }
+            });
+            document.getElementById("result").textContent = `Skor Anda: ${score} dari ${questions.length}`;
+            document.getElementById("review").innerHTML = reviewHTML;
+            document.getElementById("retry-btn").style.display = "block";
+        });
+
+        document.getElementById("retry-btn").addEventListener("click", function() {
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
