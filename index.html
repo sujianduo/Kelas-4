@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LKPD B.Mandarin</title>
+    <title>Soal B.Mandarin 4</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -106,7 +106,7 @@
     <div class="quiz-container">
         <img src="SD.png" alt="logo" width="100" height="99">
         <h1>四年级汉语第三课练习题</h1>
-        <h2>LKPD B. Mandarin Kelas 4 Bab. 3</h2>
+        <h2>Soal latihan B. Mandarin Kelas IV Bab. 3</h2>
         <h2 class="section-title">选择题 Pilihan ganda</h2>
         <form id="quiz-form"></form>
         <div id="result"></div>
@@ -125,48 +125,210 @@
 
         const questions = [
             {
-                question: "小强： 你有电脑吗？ nǐ yǒu diàn nǎo ma <br> 小华： 有 yǒu，....",
+                question: "家 jiā ......",
                 options: [
-                    { text: "我有电脑。wǒ yǒu diàn nǎo", correct: true },
-                    { text: "我没有电脑。wǒ méi yǒu diàn nǎo", correct: false },
-                    { text: "小强有电脑。xiǎo qiánɡ yǒu diàn nǎo", correct: false },
-                    { text: "小强没有电脑。xiǎo qiánɡ méi yǒu diàn nǎo ", correct: false }
+                    { text: "rumah", correct: true },
+                    { text: "kantin / kafetaria", correct: false },
+                    { text: "sekolah", correct: false },
+                    { text: "ruang kelas", correct: false }
                 ]
             },
             {
-                question: "小强：你们学校有没有食堂？nǐmen xuéxiào yǒuméiyǒu shítánɡ <br> 小华： 有 yǒu，....",
+                question: "Sekolah .....",
                 options: [
-                    { text: "我们学校有食堂。wǒ men xué xiào yǒu shí tánɡ", correct: true },
-                    { text: "我们学校没有食堂。wǒ men xué xiào méi yǒu shí tánɡ", correct: false },
-                    { text: "我家有电脑。wǒ jiā yǒu diàn nǎo", correct: false },
-                    { text: "我家没有电脑。wǒ jiā méi yǒu diàn nǎo", correct: false }
+                    { text: "学校 xué xiào", correct: true },
+                    { text: "食堂 shí tánɡ", correct: false },
+                    { text: "家 jiā", correct: false },
+                    { text: "教室 jiào shì", correct: false }
                 ]
             },
-			{
-                question: "Saya tidak punya komputer.",
+            {
+                question: "食堂 shí tánɡ ......",
                 options: [
-                    { text: "我没有电脑。wǒ méi yǒu diàn nǎo", correct: true },
-                    { text: "我有电脑。wǒ yǒu diàn nǎo", correct: false },
-                    { text: "我没有字典。wǒ méi yǒu zì diǎn", correct: false },
-                    { text: "我有自行车。wǒ yǒu zì xínɡ chē", correct: false }
+                    { text: "kantin / kafetaria", correct: true },
+                    { text: "rumah", correct: false },
+                    { text: "sekolah", correct: false },
+                    { text: "aula", correct: false }
                 ]
             },
-			{
-                question: "你家有电脑吗？nǐ jiā yǒu diàn nǎo ma",
+            {
+                question: "Komputer ......",
                 options: [
-                    { text: "Apakah di rumah kamu ada komputer?", correct: true },
-                    { text: "Apakah di sekolah kamu ada kantin?", correct: false },
-                    { text: "Kamu punya komputer, tidak?", correct: false },
+                    { text: "电脑 diàn nǎo", correct: true },
+                    { text: "自行车 zì xínɡ chē", correct: false },
+                    { text: "雨伞 yǔ sǎn", correct: false },
+                    { text: "照片 zhào piàn", correct: false }
+                ]
+            },
+            {
+                question: "自行车 zì xínɡ chē ......",
+                options: [
+                    { text: "sepeda", correct: true },
+                    { text: "komputer", correct: false },
+                    { text: "payung", correct: false },
+                    { text: "foto", correct: false }
+                ]
+            },
+            {
+                question: "雨伞 yǔ sǎn ......",
+                options: [
+                    { text: "payung", correct: true },
+                    { text: "komputer", correct: false },
+                    { text: "sepeda", correct: false },
+                    { text: "kamus", correct: false }
+                ]
+            },
+            {
+                question: "Kamus ......",
+                options: [
+                    { text: "字典 zì diǎn", correct: true },
+                    { text: "雨伞 yǔ sǎn", correct: false },
+                    { text: "照片 zhào piàn", correct: false },
+                    { text: "电脑 diàn nǎo", correct: false }
+                ]
+            },
+            {
+                question: "照片 zhào piàn ......",
+                options: [
+                    { text: "foto", correct: true },
+                    { text: "kamus", correct: false },
+                    { text: "komputer", correct: false },
+                    { text: "payung", correct: false }
+                ]
+            },
+            {
+                question: "没有 méi yǒu ......",
+                options: [
+                    { text: "tidak punya", correct: true },
+                    { text: "punya atau tidak", correct: false },
+                    { text: "boleh", correct: false },
+                    { text: "punya", correct: false }
+                ]
+            },
+            {
+                question: "Punya atau tidak ......",
+                options: [
+                    { text: "有没有 yǒu méi yǒu", correct: true },
+                    { text: "可以 kě yǐ", correct: false },
+                    { text: "没有 méi yǒu", correct: false },
+                    { text: "有 yǒu", correct: false }
+                ]
+            },
+            {
+                question: "Boleh ......",
+                options: [
+                    { text: "可以 kě yǐ", correct: true },
+                    { text: "有没有 yǒu méi yǒu", correct: false },
+                    { text: "没有 méi yǒu", correct: false },
+                    { text: "有 yǒu", correct: false }
+                ]
+            },
+            {
+                question: "吃饭 chī fàn ......",
+                options: [
+                    { text: "makan", correct: true },
+                    { text: "minum", correct: false },
+                    { text: "memasak", correct: false },
+                    { text: "mencuci", correct: false }
+                ]
+            },
+            {
+                question: "在 zài ......",
+                options: [
+                    { text: "di", correct: true },
+                    { text: "sangat", correct: false },
+                    { text: "semua", correct: false },
+                    { text: "ada", correct: false }
+                ]
+            },
+            {
+                question: "都 dōu ......",
+                options: [
+                    { text: "semua", correct: true },
+                    { text: "sangat", correct: false },
+                    { text: "di", correct: false },
+                    { text: "punya", correct: false }
+                ]
+            },
+            {
+                question: "Sangat ......",
+                options: [
+                    { text: "很 hěn", correct: true },
+                    { text: "都 dōu", correct: false },
+                    { text: "在 zài", correct: false },
+                    { text: "有 yǒu", correct: false }
+                ]
+            },
+            {
+                question: "我有一张照片。 wǒ yǒu yī zhānɡ zhào piàn",
+                options: [
+                    { text: "Saya punya 1 lembar foto.", correct: true },
+                    { text: "Saya punya 1 buah kamus.", correct: false },
+                    { text: "Saya punya 1 unit komputer.", correct: false },
+                    { text: "Saya punya 1 buah payung.", correct: false }
+                ]
+            },
+            {
+                question: "你有没有自行车？ nǐ yǒu méi yǒu zì xínɡ chē",
+                options: [
+                    { text: "Kamu punya sepeda atau tidak?", correct: true },
+                    { text: "Apakah kamu punya payung?", correct: false },
+                    { text: "Kamu punya komputer atau tidak?", correct: false },
                     { text: "Apakah kamu punya kamus?", correct: false }
                 ]
             },
-			{
-                question: "老师有一本字典。lǎo shī yǒu yī běn zì diǎn",
+            {
+                question: "Saya punya sepeda.",
                 options: [
-                    { text: "Guru punya 1 buah kamus.", correct: true },
-                    { text: "Guru punya 1 buah sepeda.", correct: false },
-                    { text: "Guru punya 1 buah komputer.", correct: false },
-                    { text: "Guru punya 1 buah payung.", correct: false }
+                    { text: "我有自行车。 wǒ yǒu zì xínɡ chē", correct: true },
+                    { text: "我有照片。 wǒ yǒu zhào piàn", correct: false },
+                    { text: "我有雨伞。 wǒ yǒu yǔ sǎn", correct: false },
+                    { text: "我有电脑。 wǒ yǒu diàn nǎo", correct: false }
+                ]
+            },
+            {
+                question: "你们学校有没有食堂？ nǐ men xué xiào yǒu méi yǒu shí tánɡ",
+                options: [
+                    { text: "Di sekolah kalian ada kantin atau tidak?", correct: true },
+                    { text: "Apakah di sekolah kalian ada perpustakaan?", correct: false },
+                    { text: "Di sekolah kalian ada aula atau tidak?", correct: false },
+                    { text: "Apakah di sekolah kalian ada komputer?", correct: false }
+                ]
+            },
+            {
+                question: "Di sekolah kami ada kantin/kafetaria.",
+                options: [
+                    { text: "我们学校有食堂。 wǒ men xué xiào yǒu shí tánɡ", correct: true },
+                    { text: "我们学校有礼堂。 wǒ men xué xiào yǒu lǐ tánɡ", correct: false },
+                    { text: "我们学校有电脑。 wǒ men xué xiào yǒu diàn nǎo", correct: false },
+                    { text: "我们学校有图书馆。 wǒ men xué xiào yǒu tú shū ɡuǎn", correct: false }
+                ]
+            },
+            {
+                question: "我家有两台电脑。 wǒ jiā yǒu liǎnɡ tái diàn nǎo",
+                options: [
+                    { text: "Di rumah saya ada 2 unit komputer.", correct: true },
+                    { text: "Di sekolah ada 2 unit komputer.", correct: false },
+                    { text: "Di rumah saya ada 2 buah sepeda.", correct: false },
+                    { text: "Di rumah saya ada 2 buah payung.", correct: false }
+                ]
+            },
+            {
+                question: "Saya punya 1 unit komputer.",
+                options: [
+                    { text: "我有一台电脑。 wǒ yǒu yī tái diàn nǎo", correct: true },
+                    { text: "我有一张照片。 wǒ yǒu yī zhānɡ zhào piàn", correct: false },
+                    { text: "我有一本字典。 wǒ yǒu yī běn zì diǎn", correct: false },
+                    { text: "我没有电脑。 wǒ méi yǒu diàn nǎo", correct: false }
+                ]
+            },
+            {
+                question: "Apakah di rumah kamu ada komputer?",
+                options: [
+                    { text: "你家有电脑吗？ nǐ jiā yǒu diàn nǎo ma", correct: true },
+                    { text: "你家有雨伞吗？ nǐ jiā yǒu yǔ sǎn ma", correct: false },
+                    { text: "你家有自行车吗？ nǐ jiā yǒu zì xínɡ chē ma", correct: false },
+                    { text: "你家有几台电脑？ nǐ jiā yǒu jǐ tái diàn nǎo", correct: false }
                 ]
             }
         ];
@@ -202,7 +364,7 @@
 
             const btn = document.createElement("button");
             btn.type = "submit";
-            btn.textContent = "Submit Jawaban";
+            btn.textContent = "提交 Submit";
             form.appendChild(btn);
 
             document.getElementById("result").textContent = "";
@@ -215,7 +377,7 @@
         document.getElementById("quiz-form").addEventListener("submit", function(e) {
             e.preventDefault();
             let score = 0;
-            let reviewHTML = "<h3>Review Jawaban:</h3>";
+            let reviewHTML = "<h3>检查答案 Review Jawaban:</h3>";
             questions.forEach((q, idx) => {
                 const selected = document.querySelector(`input[name="q${idx}"]:checked`);
                 const correctAnswer = q.options.find(opt => opt.correct).text;
