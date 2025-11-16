@@ -1,120 +1,255 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soal B.Mandarin 4</title>
+    <title>在线测试</title>
     <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
+            background-color:#f5f7fa;
+            color:#333;
+            line-height:1.6;
+            padding:20px;
         }
-        .quiz-container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 20px auto;
-            background: #fff;
-            padding: 28px;
-            border-radius: 8px;
-            box-shadow: 0 0 12px rgba(0,0,0,0.08);
-            text-align: center;
+
+        /* 🌿 Ganti warna latar kontainer jadi biru muda lembut */
+        .container {
+            max-width:800px;
+            margin:0 auto;
+            background-color:#66b3ff; /* biru muda lembut */
+            border-radius:10px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            padding:30px;
         }
-        .quiz-container img {
-            display: block;
-            margin: 0 auto 15px auto;
-            max-width: 140px;
-            height: auto;
+
+        .logo {
+            display:block;
+            margin:0 auto 20px auto;
+            width:100px;
+            height:auto;
+            max-width:30%;
         }
-        h1, h2 {
-            text-align: center;
-            color: #333;
-            margin: 10px 0;
+
+        h1 {
+            text-align:center;
+            margin-bottom:20px;
+            color:white;
         }
-        .section-title {
-            text-align: left;
-            color: darkblue;
-            margin-top: 30px;
+
+        h2 {
+            text-align:center;
+            color:white;
+            margin-bottom:15px;
         }
+
+        .left-title {
+            text-align:left;
+            color:white;
+            margin-top:10px;
+            margin-bottom:15px;
+        }
+
         .question {
-            margin-bottom: 20px;
-            text-align: left;
+            margin-bottom:25px;
+            padding:20px;
+            background-color:#e6f7ff; /* biru muda untuk area soal */
+            border-radius:8px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.05);
         }
-        .question h3 {
-            margin-bottom: 10px;
-            color: #2c3e50;
-            line-height: 1.5;
-            font-size: 18px; /* perkecil ukuran font soal */
+
+        .question-title {
+            font-size:18px;
+            margin-bottom:15px;
+            font-weight:500;
+            color:#2c3e50;
         }
-        .options label {
-            display: block;
-            margin-bottom: 6px;
-            cursor: pointer;
-            padding: 4px 6px;
-            border-radius: 4px;
-            font-size: 18px; /* perkecil ukuran font jawaban */
+
+        .options { list-style:none; }
+
+        .option {
+            padding:12px 15px;
+            margin-bottom:10px;
+            background-color:white;
+            border-radius:5px;
+            cursor:pointer;
+            transition:all 0.2s ease;
+            border:1px solid #e1e5e9;
         }
-        .options input[type="radio"] {
-            margin-right: 8px;
+
+        .option:hover { background-color:#e9ecef; }
+        .option.selected { background-color:#3498db;color:white;border-color:#3498db; }
+        .option.correct { background-color:#2ecc71;color:white;border-color:#2ecc71; }
+        .option.incorrect { background-color:#e74c3c;color:white;border-color:#e74c3c; }
+
+        .controls {
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            margin-top:30px;
+            flex-wrap:wrap;
         }
-        button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
+
+        .btn {
+            padding:12px 25px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-weight:bold;
+            transition:all 0.3s ease;
+            font-size:16px;
         }
-        button:hover {
-            background-color: #2980b9;
+
+        .btn-primary { background-color:#003366;color:white; }
+        .btn-primary:hover { background-color:#008000; }
+        .btn-tertiary { background-color:#003366;color:white; }
+        .btn-tertiary:hover { background-color:#008000; }
+
+        .result {
+            text-align:center;
+            padding:30px;
+            background-color:#f0fff0; /* selaras dengan hijau lembut */
+            border-radius:8px;
+            margin-top:20px;
+            display:none;
         }
-        #result {
-            margin-top: 20px;
-            text-align: center;
-            font-weight: bold;
+		.result h2 {
+			color: black;
+		}
+		
+        .score {
+            font-size:48px;
+            font-weight:bold;
+            color:#3498db;
+            margin:20px 0;
         }
-        #review {
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: #fafafa;
-            text-align: left;
-            font-size: 18px; /* review juga sedikit lebih kecil */
+
+        .result-details { text-align:left;margin-top:20px; }
+        .result-item { display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee; }
+
+        .progress-bar {
+            height:8px;
+            background-color:#e9ecef;
+            border-radius:4px;
+            margin-bottom:20px;
+            overflow:hidden;
         }
-        .correct {
-            color: green;
-            font-weight: bold;
+
+        .progress {
+            height:100%;
+            background-color:#3498db;
+            width:0%;
+            transition:width 0.5s ease;
         }
-        .wrong {
-            color: red;
-            font-weight: bold;
+
+        .result-controls {
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            margin-top:25px;
+            flex-wrap:wrap;
         }
-        @media (max-width: 480px) {
-            .quiz-container { padding: 16px; }
-            .quiz-container img { max-width: 100px; }
-            .question h3 { font-size: 15px; }
-            .options label { font-size: 14px; }
+
+        /* 🔹 Responsif untuk layar kecil */
+        @media (max-width: 600px) {
+            body { padding:10px; }
+            .container { padding:20px; }
+            h1 { font-size:20px; }
+            h2 { font-size:18px; }
+            .question-title { font-size:16px; }
+            .btn { font-size:14px; padding:10px 20px; }
+            .score { font-size:36px; }
+            .option { padding:10px 12px; font-size:15px; }
+        }
+
+        img, video {
+            max-width:100%;
+            height:auto;
         }
     </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <img src="SD.png" alt="logo" width="100" height="99">
-        <h1>四年级汉语第三课练习题</h1>
-        <h2>Soal latihan B. Mandarin Kelas IV Bab. 3</h2>
-        <h2 class="section-title">选择题 Pilihan ganda</h2>
-        <form id="quiz-form"></form>
-        <div id="result"></div>
-        <div id="review"></div>
-        <button id="retry-btn" style="display:none;">Ulangi Soal</button>
+    <div class="container">
+        <img src="SD.png" alt="logo" class="logo">
+
+        <h1>四年级汉语第一学期期末考试练习题</h1>
+        <h2>Soal latihan SAS B. Mandarin Kelas IV Semester 1</h2>
+
+        <h2 class="left-title">选择题 Pilihan ganda</h2>
+
+        <div class="progress-bar"><div class="progress" id="progress"></div></div>
+        <div id="questions-container"></div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="submit-btn">提交答案 Submit</button>
+        </div>
+
+        <div class="result" id="result">
+            <h2>测试结果 Hasil tes</h2>
+            <div class="score" id="score">0</div>
+            <p id="result-message"></p>
+            <div class="result-details">
+                <div class="result-item"><span>正确题数 Benar</span><span id="correct-count">0</span></div>
+                <div class="result-item"><span>错误题数 Salah</span><span id="wrong-count">0</span></div>
+                <div class="result-item"><span>总分 Nilai</span><span id="total-score">0</span></div>
+            </div>
+            <div class="result-controls">
+                <button class="btn btn-tertiary" id="retry-btn">再试一次 Ulangi</button>
+            </div>
+        </div>
     </div>
 
     <script>
+        const examData = {
+            title: "JavaScript基础知识测试",
+            questions: [
+                {id:1,text:"图书馆 tú shū ɡuǎn ......", options:["perpustakaan","ruang kelas","kantor","kantin"],correct:0},
+				{id:2,text:"办公室 bàn ɡōnɡ shì ......", options:["kantor","ruang kelas","perpustakaan","kantin"],correct:0},
+				{id:3,text:"教室 jiào shì ......", options:["ruang kelas","perpustakaan","kantor","kantin"],correct:0},
+				{id:4,text:"Rak buku ......", options:["书架 shū jià","椅子 yǐ zi","桌子 zhuō zi","衣柜 yī ɡuì"],correct:0},
+				{id:5,text:"Meja ......", options:["桌子 zhuō zi","书架 shū jià","椅子 yǐ zi","床 chuánɡ"],correct:0},
+				{id:6,text:"Kursi ......", options:["椅子 yǐ zi","书架 shū jià","桌子 zhuō zi","圆桌 yuán zhuō"],correct:0},
+				{id:7,text:"左边 zuǒ biān ......", options:["sebelah kiri","sebelah kanan","di bawah","di atas"],correct:0},
+				{id:8,text:"右边 yòu biān ......", options:["sebelah kanan","sebelah kiri","di atas","di bawah"],correct:0},
+				{id:9,text:"上面 shànɡ miàn ......", options:["di atas","sebelah kanan","di bawah","sebelah kiri"],correct:0},
+				{id:10,text:"下面 xià miàn ......", options:["di bawah","di atas","sebelah kiri","sebelah kanan"],correct:0},
+				{id:11,text:"Dimana ......", options:["哪儿 nǎ er","那儿 nà er","这儿 zhè er","在 zài"],correct:0},
+				{id:12,text:"Di sini ......", options:["这儿 zhè er","哪儿 nǎ er","那儿 nà er","在 zài"],correct:0},
+				{id:13,text:"Di sana ......", options:["那儿 nà er","这儿 zhè er","哪儿 nǎ er","在 zài"],correct:0},
+				{id:14,text:"床 chuánɡ ......", options:["ranjang","kamar","lemari baju","meja"],correct:0},
+				{id:15,text:"房间 fánɡ jiān ......", options:["kamar","lemari baju","ranjang","rak buku"],correct:0},
+				{id:16,text:"衣柜 yī ɡuì ......", options:["lemari baju","kamar","ranjang","meja"],correct:0},
+				{id:17,text:"Meja bundar ......", options:["圆桌 yuán zhuō","足球 zú qiú","电脑 diàn nǎo","椅子 yǐ zi"],correct:0},
+				{id:18,text:"Bola sepak ......", options:["足球 zú qiú","圆桌 yuán zhuō","电脑 diàn nǎo","篮球 lán qiú"],correct:0},
+				{id:19,text:"Komputer ......", options:["电脑 diàn nǎo","圆桌 yuán zhuō","足球 zú qiú","衣柜 yī ɡuì"],correct:0},
+				{id:20,text:"手 shǒu ......", options:["tangan","hidung","mulut","mata"],correct:0},
+				{id:21,text:"嘴 zuǐ ......", options:["mulut","tangan","hidung","telinga"],correct:0},
+				{id:22,text:"鼻子 bí zi ......", options:["hidung","mulut","tangan","alis"],correct:0},
+				{id:23,text:"Alis ......", options:["眉毛 méi mao","眼睛 yǎn jinɡ","耳朵 ěr duo","睫毛 jié máo"],correct:0},
+				{id:24,text:"Mata ......", options:["眼睛 yǎn jinɡ","眉毛 méi mao","耳朵 ěr duo","鼻子 bí zi"],correct:0},
+				{id:25,text:"Telinga ......", options:["耳朵 ěr duo","眼睛 yǎn jinɡ","眉毛 méi mao","鼻子 bí zi"],correct:0},
+				{id:26,text:"图书馆在 ______ ?", options:["哪儿 nǎ er","在 zài","书 shū","有 yǒu"],correct:0},
+				{id:27,text:"足球 ______ 圆桌下面。", options:["在 zài","书 shū","有 yǒu","哪儿 nǎ er"],correct:0},
+				{id:28,text:"电脑在桌子 ______ 。", options:["上边 shànɡ biān","在 zài","书 shū","有 yǒu"],correct:0},
+				{id:29,text:"______ 在桌子上。", options:["书 shū","上边 shànɡ biān","哪儿 nǎ er","有 yǒu"],correct:0},
+				{id:30,text:"这儿 ______ 一张床", options:["有 yǒu","书 shū","上边 shànɡ biān","哪儿 nǎ er"],correct:0},
+				{id:31,text:"弟弟在妈妈的左边。 dì di zài mā ma de zuǒ biān", options:["Adik laki-laki di sebelah kiri ibu.","Adik laki-laki di sebelah kanan ibu.","Kakak laki-laki di sebelah kiri ibu.","Adik perempuan di sebelah kanan ibu."],correct:0},
+				{id:32,text:"图书馆在教室右边。 tú shū ɡuǎn zài jiào shì yòu biān", options:["Perpustakaan di sebelah kanan ruang kelas.","Perpustakaan di sebelah kiri ruang kelas.","Perpustakaan di sebelah kanan kantor.","Ruang kelas di sebelah kiri perpustakaan."],correct:0},
+				{id:33,text:"Tas sekolah di bawah meja.", options:["书包在桌子下面。 shū bāo zài zhuō zi xià miàn","书包在桌子上面。 shū bāo zài zhuō zi shànɡ miàn","书包在椅子下面。 shū bāo zài yǐ zi xià miàn","书包在椅子上面。 shū bāo zài yǐ zi shànɡ miàn"],correct:0},
+				{id:34,text:"Ini adalah kamar saya.", options:["这是我的房间。 zhè shì wǒ de fánɡ jiān","这是我的家。 zhè shì wǒ de jiā","那是我的房间。 nà shì wǒ de fánɡ jiān","这是我的电脑。 zhè shì wǒ de diàn nǎo"],correct:0},
+				{id:35,text:"Komputer di mana?", options:["电脑在哪儿？ diàn nǎo zài nǎ er","书在哪儿？ shū zài nǎ er","图书馆在哪儿？ tú shū guǎn zài nǎ er","足球在那儿。 zú qiú zài nà er"],correct:0}
+            ]
+        };
+
+        let userAnswers = {};
+        let isCheckingAnswers = false;
+
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -123,280 +258,108 @@
             return array;
         }
 
-        const questions = [
-            {
-                question: "家 jiā ......",
-                options: [
-                    { text: "rumah", correct: true },
-                    { text: "kantin / kafetaria", correct: false },
-                    { text: "sekolah", correct: false },
-                    { text: "ruang kelas", correct: false }
-                ]
-            },
-            {
-                question: "Sekolah .....",
-                options: [
-                    { text: "学校 xué xiào", correct: true },
-                    { text: "食堂 shí tánɡ", correct: false },
-                    { text: "家 jiā", correct: false },
-                    { text: "教室 jiào shì", correct: false }
-                ]
-            },
-            {
-                question: "食堂 shí tánɡ ......",
-                options: [
-                    { text: "kantin / kafetaria", correct: true },
-                    { text: "rumah", correct: false },
-                    { text: "sekolah", correct: false },
-                    { text: "aula", correct: false }
-                ]
-            },
-            {
-                question: "Komputer ......",
-                options: [
-                    { text: "电脑 diàn nǎo", correct: true },
-                    { text: "自行车 zì xínɡ chē", correct: false },
-                    { text: "雨伞 yǔ sǎn", correct: false },
-                    { text: "照片 zhào piàn", correct: false }
-                ]
-            },
-            {
-                question: "自行车 zì xínɡ chē ......",
-                options: [
-                    { text: "sepeda", correct: true },
-                    { text: "komputer", correct: false },
-                    { text: "payung", correct: false },
-                    { text: "foto", correct: false }
-                ]
-            },
-            {
-                question: "雨伞 yǔ sǎn ......",
-                options: [
-                    { text: "payung", correct: true },
-                    { text: "komputer", correct: false },
-                    { text: "sepeda", correct: false },
-                    { text: "kamus", correct: false }
-                ]
-            },
-            {
-                question: "Kamus ......",
-                options: [
-                    { text: "字典 zì diǎn", correct: true },
-                    { text: "雨伞 yǔ sǎn", correct: false },
-                    { text: "照片 zhào piàn", correct: false },
-                    { text: "电脑 diàn nǎo", correct: false }
-                ]
-            },
-            {
-                question: "照片 zhào piàn ......",
-                options: [
-                    { text: "foto", correct: true },
-                    { text: "kamus", correct: false },
-                    { text: "komputer", correct: false },
-                    { text: "payung", correct: false }
-                ]
-            },
-            {
-                question: "没有 méi yǒu ......",
-                options: [
-                    { text: "tidak punya", correct: true },
-                    { text: "punya atau tidak", correct: false },
-                    { text: "boleh", correct: false },
-                    { text: "punya", correct: false }
-                ]
-            },
-            {
-                question: "Punya atau tidak ......",
-                options: [
-                    { text: "有没有 yǒu méi yǒu", correct: true },
-                    { text: "可以 kě yǐ", correct: false },
-                    { text: "没有 méi yǒu", correct: false },
-                    { text: "有 yǒu", correct: false }
-                ]
-            },
-            {
-                question: "Boleh ......",
-                options: [
-                    { text: "可以 kě yǐ", correct: true },
-                    { text: "有没有 yǒu méi yǒu", correct: false },
-                    { text: "没有 méi yǒu", correct: false },
-                    { text: "有 yǒu", correct: false }
-                ]
-            },
-            {
-                question: "吃饭 chī fàn ......",
-                options: [
-                    { text: "makan", correct: true },
-                    { text: "minum", correct: false },
-                    { text: "memasak", correct: false },
-                    { text: "mencuci", correct: false }
-                ]
-            },
-            {
-                question: "在 zài ......",
-                options: [
-                    { text: "di", correct: true },
-                    { text: "sangat", correct: false },
-                    { text: "semua", correct: false },
-                    { text: "ada", correct: false }
-                ]
-            },
-            {
-                question: "都 dōu ......",
-                options: [
-                    { text: "semua", correct: true },
-                    { text: "sangat", correct: false },
-                    { text: "di", correct: false },
-                    { text: "punya", correct: false }
-                ]
-            },
-            {
-                question: "Sangat ......",
-                options: [
-                    { text: "很 hěn", correct: true },
-                    { text: "都 dōu", correct: false },
-                    { text: "在 zài", correct: false },
-                    { text: "有 yǒu", correct: false }
-                ]
-            },
-            {
-                question: "我有一张照片。 wǒ yǒu yī zhānɡ zhào piàn",
-                options: [
-                    { text: "Saya punya 1 lembar foto.", correct: true },
-                    { text: "Saya punya 1 buah kamus.", correct: false },
-                    { text: "Saya punya 1 unit komputer.", correct: false },
-                    { text: "Saya punya 1 buah payung.", correct: false }
-                ]
-            },
-            {
-                question: "你有没有自行车？ nǐ yǒu méi yǒu zì xínɡ chē",
-                options: [
-                    { text: "Kamu punya sepeda atau tidak?", correct: true },
-                    { text: "Apakah kamu punya payung?", correct: false },
-                    { text: "Kamu punya komputer atau tidak?", correct: false },
-                    { text: "Apakah kamu punya kamus?", correct: false }
-                ]
-            },
-            {
-                question: "Saya punya sepeda.",
-                options: [
-                    { text: "我有自行车。 wǒ yǒu zì xínɡ chē", correct: true },
-                    { text: "我有照片。 wǒ yǒu zhào piàn", correct: false },
-                    { text: "我有雨伞。 wǒ yǒu yǔ sǎn", correct: false },
-                    { text: "我有电脑。 wǒ yǒu diàn nǎo", correct: false }
-                ]
-            },
-            {
-                question: "你们学校有没有食堂？ nǐ men xué xiào yǒu méi yǒu shí tánɡ",
-                options: [
-                    { text: "Di sekolah kalian ada kantin atau tidak?", correct: true },
-                    { text: "Apakah di sekolah kalian ada perpustakaan?", correct: false },
-                    { text: "Di sekolah kalian ada aula atau tidak?", correct: false },
-                    { text: "Apakah di sekolah kalian ada komputer?", correct: false }
-                ]
-            },
-            {
-                question: "Di sekolah kami ada kantin/kafetaria.",
-                options: [
-                    { text: "我们学校有食堂。 wǒ men xué xiào yǒu shí tánɡ", correct: true },
-                    { text: "我们学校有礼堂。 wǒ men xué xiào yǒu lǐ tánɡ", correct: false },
-                    { text: "我们学校有电脑。 wǒ men xué xiào yǒu diàn nǎo", correct: false },
-                    { text: "我们学校有图书馆。 wǒ men xué xiào yǒu tú shū ɡuǎn", correct: false }
-                ]
-            },
-            {
-                question: "我家有两台电脑。 wǒ jiā yǒu liǎnɡ tái diàn nǎo",
-                options: [
-                    { text: "Di rumah saya ada 2 unit komputer.", correct: true },
-                    { text: "Di sekolah ada 2 unit komputer.", correct: false },
-                    { text: "Di rumah saya ada 2 buah sepeda.", correct: false },
-                    { text: "Di rumah saya ada 2 buah payung.", correct: false }
-                ]
-            },
-            {
-                question: "Saya punya 1 unit komputer.",
-                options: [
-                    { text: "我有一台电脑。 wǒ yǒu yī tái diàn nǎo", correct: true },
-                    { text: "我有一张照片。 wǒ yǒu yī zhānɡ zhào piàn", correct: false },
-                    { text: "我有一本字典。 wǒ yǒu yī běn zì diǎn", correct: false },
-                    { text: "我没有电脑。 wǒ méi yǒu diàn nǎo", correct: false }
-                ]
-            },
-            {
-                question: "Apakah di rumah kamu ada komputer?",
-                options: [
-                    { text: "你家有电脑吗？ nǐ jiā yǒu diàn nǎo ma", correct: true },
-                    { text: "你家有雨伞吗？ nǐ jiā yǒu yǔ sǎn ma", correct: false },
-                    { text: "你家有自行车吗？ nǐ jiā yǒu zì xínɡ chē ma", correct: false },
-                    { text: "你家有几台电脑？ nǐ jiā yǒu jǐ tái diàn nǎo", correct: false }
-                ]
-            }
-        ];
+        function initExam() {
+            userAnswers = {};
+            isCheckingAnswers = false;
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
 
-        function renderQuiz() {
-            const form = document.getElementById("quiz-form");
-            form.innerHTML = "";
-            shuffle(questions).forEach((q, idx) => {
-                const div = document.createElement("div");
-                div.classList.add("question");
+            const shuffledQuestions = shuffle([...examData.questions]);
 
-                const h3 = document.createElement("h3");
-                h3.innerHTML = `${idx + 1}. ${q.question}`;
-                div.appendChild(h3);
+            shuffledQuestions.forEach((question, index) => {
+                const optionsWithIndex = question.options.map((opt, i) => ({text: opt, index: i}));
+                const shuffledOptions = shuffle(optionsWithIndex);
+                const newCorrectIndex = shuffledOptions.findIndex(opt => opt.index === question.correct);
 
-                const optionsDiv = document.createElement("div");
-                optionsDiv.classList.add("options");
+                question.shuffledOptions = shuffledOptions;
+                question.shuffledCorrect = newCorrectIndex;
 
-                shuffle(q.options).forEach(opt => {
-                    const label = document.createElement("label");
-                    const input = document.createElement("input");
-                    input.type = "radio";
-                    input.name = `q${idx}`;
-                    input.value = opt.correct;
-                    label.appendChild(input);
-                    label.append(` ${opt.text}`);
-                    optionsDiv.appendChild(label);
-                });
-
-                div.appendChild(optionsDiv);
-                form.appendChild(div);
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question';
+                qDiv.innerHTML = `
+                    <div class="question-title">${index + 1}. ${question.text}</div>
+                    <ul class="options">
+                        ${shuffledOptions.map((opt, i) => 
+                            `<li class="option" data-question="${question.id}" data-value="${i}">${opt.text}</li>`
+                        ).join('')}
+                    </ul>
+                `;
+                container.appendChild(qDiv);
             });
 
-            const btn = document.createElement("button");
-            btn.type = "submit";
-            btn.textContent = "提交 Submit";
-            form.appendChild(btn);
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function() {
+                    if (isCheckingAnswers) return;
+                    const qid = this.getAttribute('data-question');
+                    const val = parseInt(this.getAttribute('data-value'));
+                    document.querySelectorAll(`.option[data-question="${qid}"]`).forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    userAnswers[qid] = val;
+                    updateProgressBar();
+                });
+            });
 
-            document.getElementById("result").textContent = "";
-            document.getElementById("review").innerHTML = "";
-            document.getElementById("retry-btn").style.display = "none";
+            document.getElementById('submit-btn').addEventListener('click', submitExam);
+            document.getElementById('retry-btn').addEventListener('click', retryExam);
+            document.getElementById('progress').style.width = '0%';
         }
 
-        document.addEventListener("DOMContentLoaded", renderQuiz);
+        function updateProgressBar() {
+            const total = examData.questions.length;
+            const answered = Object.keys(userAnswers).length;
+            document.getElementById('progress').style.width = `${(answered / total) * 100}%`;
+        }
 
-        document.getElementById("quiz-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            let score = 0;
-            let reviewHTML = "<h3>检查答案 Review Jawaban:</h3>";
-            questions.forEach((q, idx) => {
-                const selected = document.querySelector(`input[name="q${idx}"]:checked`);
-                const correctAnswer = q.options.find(opt => opt.correct).text;
-                if (selected && selected.value === "true") {
-                    score++;
-                    reviewHTML += `<p>${idx + 1}. ${q.question} - <span class='correct'>Benar (${correctAnswer})</span></p>`;
-                } else {
-                    const chosenText = selected ? selected.parentNode.textContent.trim() : "(tidak dijawab)";
-                    reviewHTML += `<p>${idx + 1}. ${q.question} - <span class='wrong'>Salah</span> (Jawaban Anda: ${chosenText}, Benar: ${correctAnswer})</p>`;
+        function submitExam() {
+            if (Object.keys(userAnswers).length < examData.questions.length) {
+                if (!confirm(`Ada ${examData.questions.length - Object.keys(userAnswers).length} soal belum dijawab, yakin mau submit？`)) return;
+            }
+
+            let correct = 0;
+            examData.questions.forEach(q => {
+                const correctIndex = q.shuffledCorrect;
+                const userIndex = userAnswers[q.id];
+                if (userIndex === correctIndex) correct++;
+            });
+
+            const total = examData.questions.length;
+            const score = Math.round((correct / total) * 100);
+            document.getElementById('score').textContent = score;
+            document.getElementById('correct-count').textContent = correct;
+            document.getElementById('wrong-count').textContent = total - correct;
+            document.getElementById('total-score').textContent = `${score}分`;
+            document.getElementById('result-message').textContent =
+                score >= 90 ? "优秀！Bagus sekali" :
+                score >= 80 ? "良好！Bagus" :
+                score >= 60 ? "及格！Cukup, belajar lebih giat" : "Belajar lagi dan ulangi menjawab soal";
+            
+            document.getElementById('result').style.display = 'block';
+            checkAnswers();
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function checkAnswers() {
+            isCheckingAnswers = true;
+            examData.questions.forEach(q => {
+                const correctIndex = q.shuffledCorrect;
+                const userIndex = userAnswers[q.id];
+                const correctOption = document.querySelector(`.option[data-question="${q.id}"][data-value="${correctIndex}"]`);
+                if (correctOption) correctOption.classList.add('correct');
+                if (userIndex !== undefined && userIndex !== correctIndex) {
+                    const userOption = document.querySelector(`.option[data-question="${q.id}"][data-value="${userIndex}"]`);
+                    if (userOption) userOption.classList.add('incorrect');
                 }
             });
-            document.getElementById("result").textContent = `Skor Anda: ${score} dari ${questions.length}`;
-            document.getElementById("review").innerHTML = reviewHTML;
-            document.getElementById("retry-btn").style.display = "block";
-        });
+            document.querySelectorAll('.option').forEach(o => o.style.cursor = 'default');
+        }
 
-        document.getElementById("retry-btn").addEventListener("click", function() {
-            renderQuiz();
-        });
+        function retryExam() {
+            document.getElementById('result').style.display = 'none';
+            initExam();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', initExam);
     </script>
 </body>
 </html>
