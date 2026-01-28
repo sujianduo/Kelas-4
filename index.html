@@ -178,8 +178,8 @@
     <div class="container">
         <img src="SD.png" alt="logo" class="logo">
 
-        <h1>四年级汉语第一学期期末考试练习题</h1>
-        <h2>Soal latihan SAS B. Mandarin Kelas IV Semester 1</h2>
+        <h1>四年级汉语第二学期第六课练习题</h1>
+        <h2>Soal latihan Bab. 6 B. Mandarin Kelas IV Semester 2</h2>
 
         <h2 class="left-title">选择题 Pilihan ganda</h2>
 
@@ -209,41 +209,34 @@
         const examData = {
             title: "JavaScript基础知识测试",
             questions: [
-                {id:1,text:"图书馆 tú shū ɡuǎn ......", options:["perpustakaan","ruang kelas","kantor","kantin"],correct:0},
-				{id:2,text:"办公室 bàn ɡōnɡ shì ......", options:["kantor","ruang kelas","perpustakaan","kantin"],correct:0},
-				{id:3,text:"教室 jiào shì ......", options:["ruang kelas","perpustakaan","kantor","kantin"],correct:0},
-				{id:4,text:"Rak buku ......", options:["书架 shū jià","椅子 yǐ zi","桌子 zhuō zi","衣柜 yī ɡuì"],correct:0},
-				{id:5,text:"Meja ......", options:["桌子 zhuō zi","书架 shū jià","椅子 yǐ zi","床 chuánɡ"],correct:0},
-				{id:6,text:"Kursi ......", options:["椅子 yǐ zi","书架 shū jià","桌子 zhuō zi","圆桌 yuán zhuō"],correct:0},
-				{id:7,text:"左边 zuǒ biān ......", options:["sebelah kiri","sebelah kanan","di bawah","di atas"],correct:0},
-				{id:8,text:"右边 yòu biān ......", options:["sebelah kanan","sebelah kiri","di atas","di bawah"],correct:0},
-				{id:9,text:"上面 shànɡ miàn ......", options:["di atas","sebelah kanan","di bawah","sebelah kiri"],correct:0},
-				{id:10,text:"下面 xià miàn ......", options:["di bawah","di atas","sebelah kiri","sebelah kanan"],correct:0},
-				{id:11,text:"Dimana ......", options:["哪儿 nǎ er","那儿 nà er","这儿 zhè er","在 zài"],correct:0},
-				{id:12,text:"Di sini ......", options:["这儿 zhè er","哪儿 nǎ er","那儿 nà er","在 zài"],correct:0},
-				{id:13,text:"Di sana ......", options:["那儿 nà er","这儿 zhè er","哪儿 nǎ er","在 zài"],correct:0},
-				{id:14,text:"床 chuánɡ ......", options:["ranjang","kamar","lemari baju","meja"],correct:0},
-				{id:15,text:"房间 fánɡ jiān ......", options:["kamar","lemari baju","ranjang","rak buku"],correct:0},
-				{id:16,text:"衣柜 yī ɡuì ......", options:["lemari baju","kamar","ranjang","meja"],correct:0},
-				{id:17,text:"Meja bundar ......", options:["圆桌 yuán zhuō","足球 zú qiú","电脑 diàn nǎo","椅子 yǐ zi"],correct:0},
-				{id:18,text:"Bola sepak ......", options:["足球 zú qiú","圆桌 yuán zhuō","电脑 diàn nǎo","篮球 lán qiú"],correct:0},
-				{id:19,text:"Komputer ......", options:["电脑 diàn nǎo","圆桌 yuán zhuō","足球 zú qiú","衣柜 yī ɡuì"],correct:0},
-				{id:20,text:"手 shǒu ......", options:["tangan","hidung","mulut","mata"],correct:0},
-				{id:21,text:"嘴 zuǐ ......", options:["mulut","tangan","hidung","telinga"],correct:0},
-				{id:22,text:"鼻子 bí zi ......", options:["hidung","mulut","tangan","alis"],correct:0},
-				{id:23,text:"Alis ......", options:["眉毛 méi mao","眼睛 yǎn jinɡ","耳朵 ěr duo","睫毛 jié máo"],correct:0},
-				{id:24,text:"Mata ......", options:["眼睛 yǎn jinɡ","眉毛 méi mao","耳朵 ěr duo","鼻子 bí zi"],correct:0},
-				{id:25,text:"Telinga ......", options:["耳朵 ěr duo","眼睛 yǎn jinɡ","眉毛 méi mao","鼻子 bí zi"],correct:0},
-				{id:26,text:"图书馆在 ______ ?", options:["哪儿 nǎ er","在 zài","书 shū","有 yǒu"],correct:0},
-				{id:27,text:"足球 ______ 圆桌下面。", options:["在 zài","书 shū","有 yǒu","哪儿 nǎ er"],correct:0},
-				{id:28,text:"电脑在桌子 ______ 。", options:["上边 shànɡ biān","在 zài","书 shū","有 yǒu"],correct:0},
-				{id:29,text:"______ 在桌子上。", options:["书 shū","上边 shànɡ biān","哪儿 nǎ er","有 yǒu"],correct:0},
-				{id:30,text:"这儿 ______ 一张床", options:["有 yǒu","书 shū","上边 shànɡ biān","哪儿 nǎ er"],correct:0},
-				{id:31,text:"弟弟在妈妈的左边。 dì di zài mā ma de zuǒ biān", options:["Adik laki-laki di sebelah kiri ibu.","Adik laki-laki di sebelah kanan ibu.","Kakak laki-laki di sebelah kiri ibu.","Adik perempuan di sebelah kanan ibu."],correct:0},
-				{id:32,text:"图书馆在教室右边。 tú shū ɡuǎn zài jiào shì yòu biān", options:["Perpustakaan di sebelah kanan ruang kelas.","Perpustakaan di sebelah kiri ruang kelas.","Perpustakaan di sebelah kanan kantor.","Ruang kelas di sebelah kiri perpustakaan."],correct:0},
-				{id:33,text:"Tas sekolah di bawah meja.", options:["书包在桌子下面。 shū bāo zài zhuō zi xià miàn","书包在桌子上面。 shū bāo zài zhuō zi shànɡ miàn","书包在椅子下面。 shū bāo zài yǐ zi xià miàn","书包在椅子上面。 shū bāo zài yǐ zi shànɡ miàn"],correct:0},
-				{id:34,text:"Ini adalah kamar saya.", options:["这是我的房间。 zhè shì wǒ de fánɡ jiān","这是我的家。 zhè shì wǒ de jiā","那是我的房间。 nà shì wǒ de fánɡ jiān","这是我的电脑。 zhè shì wǒ de diàn nǎo"],correct:0},
-				{id:35,text:"Komputer di mana?", options:["电脑在哪儿？ diàn nǎo zài nǎ er","书在哪儿？ shū zài nǎ er","图书馆在哪儿？ tú shū guǎn zài nǎ er","足球在那儿。 zú qiú zài nà er"],correct:0}
+                {id:1,text:"水果 shuǐ ɡuǒ ......", options:["buah","nasi","sayur","ikan"],correct:0},
+				{id:2,text:"Semangka ......", options:["西瓜 xī ɡuā","苹果 pínɡ ɡuǒ","梨 lí","香蕉 xiānɡ jiāo"],correct:0},
+				{id:3,text:"苹果 pínɡ ɡuǒ ......", options:["apel","semangka","pir","pisang"],correct:0},
+				{id:4,text:"梨 lí ......", options:["pir","semangka","apel","pisang"],correct:0},
+				{id:5,text:"Besar ......", options:["大 dà","多 duō","小 xiǎo","少 shǎo"],correct:0},
+				{id:6,text:"小 xiǎo ......", options:["kecil","besar","sedikit","pendek"],correct:0},
+				{id:7,text:"Banyak ......", options:["多 duō","大 dà","小 xiǎo","长 chánɡ"],correct:0},
+				{id:8,text:"少 shǎo ......", options:["sedikit","kecil","besar","pendek"],correct:0},
+				{id:9,text:"Panjang ......", options:["长 chánɡ","少 shǎo","短 duǎn","多 duō"],correct:0},
+				{id:10,text:"短 duǎn ......", options:["pendek","banyak","panjang","kecil"],correct:0},
+				{id:11,text:"Malam ......", options:["晚上 wǎn shanɡ","早上 zǎo shanɡ","下午 xià wǔ","中午 zhōnɡ wǔ"],correct:0},
+				{id:12,text:"吃 chī ......", options:["makan","minum","tidur","bermain"],correct:0},
+				{id:13,text:"Rambut ......", options:["头发 tóu fa","眼睛 yǎn jinɡ","耳朵 ěr duo","眉毛 méi mao"],correct:0},
+				{id:14,text:"还是 hái shì ......", options:["atau","dan","bukan","adalah"],correct:0},
+				{id:15,text:"Laki-laki ......", options:["男 nán","女 nǚ","公 ɡōnɡ","母 mǔ"],correct:0},
+				{id:16,text:"女 nǚ ......", options:["perempuan","laki-laki","umum","siapa"],correct:0},
+				{id:17,text:"Lemari buku ......", options:["书柜 shū ɡuì","书架 shū jià","衣柜 yī ɡuì","衣架 yī jià"],correct:0},
+				{id:18,text:"哪 nǎ ......", options:["mana","ini","itu","dia"],correct:0},
+				{id:19,text:"Bola basket ......", options:["篮球 lán qiú","排球 pái qiú","足球 zú qiú","乒乓球 pīnɡ pānɡ qiú"],correct:0},
+				{id:20,text:"乒乓球 pīnɡ pānɡ qiú ......", options:["bola ping pong","bola basket","bola voli","bola tenis"],correct:0},
+				{id:21,text:"Semangka besar, apel kecil.", options:["西瓜大，苹果小。 xī ɡuā dà, pínɡ ɡuǒ xiǎo","西瓜少，苹果多。 xī ɡuā shǎo, pínɡ ɡuǒ duō","苹果多，梨少。 pínɡ ɡuǒ duō, lí shǎo","西瓜大，梨小。 xī ɡuā dà, lí xiǎo"],correct:0},
+				{id:22,text:"Murid banyak, guru sedikit.", options:["学生多，老师少。 xué shenɡ duō, lǎo shī shǎo","学生少，老师少。 xué shenɡ shǎo, lǎo shī shǎo","学生多，老师多。 xué shenɡ duō, lǎo shī duō","学生少，老师多。 xué shenɡ shǎo, lǎo shī duō"],correct:0},
+				{id:23,text:"西瓜大还是苹果大？ xī ɡuā dà hái shì pínɡ ɡuǒ dà", options:["西瓜大 xī ɡuā dà","苹果大 pínɡ ɡuǒ dà","梨大 lí dà","苹果多 pínɡ ɡuǒ duō"],correct:0},
+				{id:24,text:"老师多还是学生多？ lǎo shī duō hái shì xué shenɡ duō", options:["学生多 xué shenɡ duō","老师多 lǎo shī duō","学生少 xué shenɡ shǎo","老师少 lǎo shī shǎo"],correct:0},
+				{id:25,text:"篮球大还是乒乓球大？ lán qiú dà hái shì pīnɡ pānɡ qiú dà", options:["篮球大 lán qiú dà","乒乓球大 pīnɡ pānɡ qiú dà","足球大 zú qiú dà","排球大 pái qiú dà"],correct:0},
+				{id:26,text:"晚上我们吃水果。 wǎn shanɡ wǒ men chī shuǐ ɡuǒ", options:["Malam kami makan buah.","Malam kami makan nasi.","Pagi kami makan roti.","Pagi kami makan buah."],correct:0},
+				{id:27,text:"我和妹妹吃苹果。 wǒ hé mèi mei chī pínɡ ɡuǒ", options:["Saya dan adik perempuan makan apel.","Saya dan kakak perempuan makan apel.","Saya dan adik perempuan makan semangka.","Saya dan kakak perempuan makan roti."],correct:0},
+				{id:28,text:"我的头发短。 wǒ de tóu fa duǎn", options:["Rambut saya pendek.","Rambut saya panjang.","Apel saya banyak.","Rambut dia pendek."],correct:0}
             ]
         };
 
