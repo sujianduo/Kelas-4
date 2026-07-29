@@ -400,8 +400,8 @@
 <div class="container">
     <img src="SD.png" alt="logo sekolah" class="logo" onerror="this.style.display='none'">
 
-    <h1>四年级汉语第二学期期末考试通关练习</h1>
-    <div style="text-align: center;"><h2>✨ Soal Latihan SAS Bahasa Mandarin Kelas IV Semester 2 ✨</h2></div>
+    <h1>四年级汉语第一学期第一课测验通关练习</h1>
+    <div style="text-align: center;"><h2>✨ Soal Latihan Sumatif Bahasa Mandarin Kelas IV Semester 1 Bab. 1✨</h2></div>
 
     <div class="left-title">🎯 选择题 Pilihan Ganda</div>
 
@@ -431,41 +431,26 @@
 <script>
     // ---------- 原始题库，全面包含  年级知识点 ----------
     const rawQuestions = [
-		{id:1,text:"狗 ɡǒu ......", options:["anjing","burung","kucing","kambing"],correct:0},
-		{id:2,text:"Kucing ......", options:["猫 māo","狗 ɡǒu","鸟 niǎo","猪 zhū"],correct:0},
-		{id:3,text:"非常 fēi chánɡ ......", options:["sangat","pulang","terlambat","lelah"],correct:0},
-		{id:4,text:"Imut ......", options:["可爱 kě ài","好看 hǎo kàn","聪明 cōnɡ minɡ","漂亮 piào lianɡ"],correct:0},
-		{id:5,text:"聪明 cōnɡ minɡ ......", options:["pintar","imut","bagus dilihat","cantik"],correct:0},
-		{id:6,text:"Suka ......", options:["喜欢 xǐ huan","回来 huí lái","非常 fēi chánɡ","热闹 rè nao"],correct:0},
-		{id:7,text:"您 nín ......", options:["anda","beliau","saya","kami"],correct:0},
-		{id:8,text:"Mereka ......", options:["它们 tā men","你们 nǐ men","我们 wǒ men","咱们 zán men"],correct:0},
-		{id:9,text:"忙 mánɡ ......", options:["sibuk","bekerja","lelah","selesai"],correct:0},
-		{id:10,text:"Lelah ......", options:["累 lèi","玩 wán","忙 mánɡ","好 hǎo"],correct:0},
-		{id:11,text:"这个 zhè ɡè ......", options:["ini","disini","itu","disana"],correct:0},
-		{id:12,text:"Taman ......", options:["公园 ɡōnɡ yuán","操场 cāo chǎnɡ","学校 xué xiào","医院 yī yuàn"],correct:0},
-		{id:13,text:"绿色 lǜ sè ......", options:["warna hijau","warna merah","warna kuning","warna biru"],correct:0},
-		{id:14,text:"Ramai ......", options:["热闹 rè nao","安静 ān jìnɡ","舒服 shū fu","凉快 liánɡ kuài"],correct:0},
-		{id:15,text:"湖 hú ......", options:["danau","jembatan","sungai","laut"],correct:0},
-		{id:16,text:"Jembatan ......", options:["桥 qiáo","湖 hú","河 hé","墙 qiánɡ"],correct:0},
-		{id:17,text:"花园 huā yuán ......", options:["kebun bunga","kebun buah","kebun sayur","kebun binatang"],correct:0},
-		{id:18,text:"Pintu ......", options:["门 mén","墙 qiánɡ","瓦 wǎ","床 chuánɡ"],correct:0},
-		{id:19,text:"前 qián ......", options:["depan","belakang","atas","bawah"],correct:0},
-		{id:20,text:"Tidak sedikit / banyak ......", options:["不少 bù shǎo","不大 bú dà","不多 bù duō","不高 bù ɡāo"],correct:0},
-		{id:21,text:"ɡǒu", options:["狗","猫","猪","狼"],correct:0},
-		{id:22,text:"kě ài", options:["可爱","聪明","漂亮","强壮"],correct:0},
-		{id:23,text:"māo", options:["猫","狗","猪","狼"],correct:0},
-		{id:24,text:"cōnɡ minɡ", options:["聪明","可爱","漂亮","强壮"],correct:0},
-		{id:25,text:"fēi chánɡ", options:["非常","喜欢","安静","不少"],correct:0},
-		{id:26,text:"nín", options:["您","我","他","她"],correct:0},
-		{id:27,text:"mánɡ", options:["忙","累","乐","怒"],correct:0},
-		{id:28,text:"lèi", options:["累","忙","常","乐"],correct:0},
-		{id:29,text:"ɡōnɡ yuán", options:["公园","医院","房间","食堂"],correct:0},
-		{id:30,text:"rè nao", options:["热闹","安静","高兴","快乐"],correct:0},
-		{id:31,text:"Saya punya anjing kecil. <br>wǒ yǒu xiǎo ɡǒu", options:["我有小狗。","我有小猫。","我有小鸟。","我有小羊。"],correct:0},
-		{id:32,text:"Kucing kecil sangat pintar. <br>xiǎo māo fēi chánɡ cōnɡ minɡ", options:["小猫非常聪明。","小猫非常可爱。","小狗非常聪明。","小狗非常可爱。"],correct:0},
-		{id:33,text:"Di taman ada sebuah danau. <br>ɡōnɡ yuán yǒu yī ɡè hú", options:["公园有一个湖。","公园有很多树。","山下有一个湖。","公园非常热闹。"],correct:0},
-		{id:34,text:"xiǎo ɡǒu fēi chánɡ kě ài .", options:["小狗非常可爱。","小狗非常聪明。","小狗非常好看。","小猫非常可爱。"],correct:0},
-		{id:35,text:"ɡōnɡ yuán fēi chánɡ dà .", options:["公园非常大。","公园很热闹。","医院非常大。","学校非常大。"],correct:0}
+		{id:1,text:"书 shū ......", options:["buku","pensil","tas sekolah","penggaris"],correct:0},
+		{id:2,text:"笔 bǐ ......", options:["alat untuk menulis","tas sekolah","penggaris","gunting"],correct:0},
+		{id:3,text:"同桌 tónɡ zhuō ......", options:["teman semeja","teman sekolah","teman bermain","teman masa kecil"],correct:0},
+		{id:4,text:"书包 shū bāo ......", options:["tas sekolah","meja","pensil","penggaris"],correct:0},
+		{id:5,text:"玩具 wán jù ......", options:["mainan","rumah","pensil","buku tulis"],correct:0},
+		{id:6,text:"Buku tulis ......", options:["本子 běn zi","玩具 wán jù","尺子 chǐ zi","笔 bǐ"],correct:0},
+		{id:7,text:"Penggaris ......", options:["尺子 chǐ zi","本子 běn zi","笔 bǐ","玩具 wán jù"],correct:0},
+		{id:8,text:"这 zhè", options:["ini","itu","adalah","apakah"],correct:0},
+		{id:9,text:"那 nà", options:["itu","ini","adalah","apakah"],correct:0},
+		{id:10,text:"谁 shéi", options:["siapa","apakah","apa","dimana"],correct:0},
+		{id:11,text:"bǐ", options:["笔","书","毛","手"],correct:0},
+		{id:12,text:"tónɡ zhuō", options:["同桌","孩子","朋友","学生"],correct:0},
+		{id:13,text:"shū bāo", options:["书包","铅笔","桌子","尺子"],correct:0},
+		{id:14,text:"chǐ zi", options:["尺子","本子","勺子","包子"],correct:0},
+		{id:15,text:"běn zi", options:["本子","尺子","筷子","包子"],correct:0},
+		{id:16,text:"这是小强的笔。zhè shì xiǎo qiánɡ de bǐ", options:["Ini adalah pensil Xiaoqiang.","Itu adalah pensil Xiaoqiang.","Ini adalah buku Xiaoqiang.","Itu adalah penggaris Xiaoqiang."],correct:0},
+		{id:17,text:"那是谁的书包？nà shì shuí de shū bāo", options:["Itu tas sekolah siapa?","Itu buku siapa?","Itu penggaris siapa?","Itu pensil siapa?"],correct:0},
+		{id:18,text:"这是妹妹的玩具。zhè shì mèi mei de wán jù", options:["Ini adalah mainan adik perempuan.","Ini adalah mainan adik laki-laki.","Itu adalah mainan kakak laki-laki.","Itu adalah mainan kakak perempuan."],correct:0},
+		{id:19,text:"Ini adalah buku saya. zhè shì wǒ de shū", options:["这是我的书。","这是我的笔。","这是我的包。","这是我的钱。"],correct:0},
+		{id:20,text:"Itu buku tulis siapa? nà shì shéi de běn zi", options:["那是谁的本子？","那是谁的尺子？","那是谁的帽子？","那是谁的包子？"],correct:0}
     ];
 
     let currentQuestions = [];      // 存储 shuffle 之后带 shuffledOptions & shuffledCorrect 的题目
