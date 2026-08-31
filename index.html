@@ -400,8 +400,8 @@
 <div class="container">
     <img src="SD.png" alt="logo sekolah" class="logo" onerror="this.style.display='none'">
 
-    <h1>四年级汉语第一学期第一课测验通关练习</h1>
-    <div style="text-align: center;"><h2>✨ Soal Latihan Sumatif Bahasa Mandarin Kelas IV Semester 1 Bab. 1✨</h2></div>
+    <h1>四年级第一学期第二课汉语测验通关练习</h1>
+    <div style="text-align: center;"><h2>✨ Soal Latihan Bahasa Mandarin Kelas IV Semester 1 Bab. 2✨</h2></div>
 
     <div class="left-title">🎯 选择题 Pilihan Ganda</div>
 
@@ -431,26 +431,26 @@
 <script>
     // ---------- 原始题库，全面包含  年级知识点 ----------
     const rawQuestions = [
-		{id:1,text:"书 shū ......", options:["buku","pensil","tas sekolah","penggaris"],correct:0},
-		{id:2,text:"笔 bǐ ......", options:["alat untuk menulis","tas sekolah","penggaris","gunting"],correct:0},
-		{id:3,text:"同桌 tónɡ zhuō ......", options:["teman semeja","teman sekolah","teman bermain","teman masa kecil"],correct:0},
-		{id:4,text:"书包 shū bāo ......", options:["tas sekolah","meja","pensil","penggaris"],correct:0},
-		{id:5,text:"玩具 wán jù ......", options:["mainan","rumah","pensil","buku tulis"],correct:0},
-		{id:6,text:"Buku tulis ......", options:["本子 běn zi","玩具 wán jù","尺子 chǐ zi","笔 bǐ"],correct:0},
-		{id:7,text:"Penggaris ......", options:["尺子 chǐ zi","本子 běn zi","笔 bǐ","玩具 wán jù"],correct:0},
-		{id:8,text:"这 zhè", options:["ini","itu","adalah","apakah"],correct:0},
-		{id:9,text:"那 nà", options:["itu","ini","adalah","apakah"],correct:0},
-		{id:10,text:"谁 shéi", options:["siapa","apakah","apa","dimana"],correct:0},
-		{id:11,text:"bǐ", options:["笔","书","毛","手"],correct:0},
-		{id:12,text:"tónɡ zhuō", options:["同桌","孩子","朋友","学生"],correct:0},
-		{id:13,text:"shū bāo", options:["书包","铅笔","桌子","尺子"],correct:0},
-		{id:14,text:"chǐ zi", options:["尺子","本子","勺子","包子"],correct:0},
-		{id:15,text:"běn zi", options:["本子","尺子","筷子","包子"],correct:0},
-		{id:16,text:"这是小强的笔。zhè shì xiǎo qiánɡ de bǐ", options:["Ini adalah pensil Xiaoqiang.","Itu adalah pensil Xiaoqiang.","Ini adalah buku Xiaoqiang.","Itu adalah penggaris Xiaoqiang."],correct:0},
-		{id:17,text:"那是谁的书包？nà shì shuí de shū bāo", options:["Itu tas sekolah siapa?","Itu buku siapa?","Itu penggaris siapa?","Itu pensil siapa?"],correct:0},
-		{id:18,text:"这是妹妹的玩具。zhè shì mèi mei de wán jù", options:["Ini adalah mainan adik perempuan.","Ini adalah mainan adik laki-laki.","Itu adalah mainan kakak laki-laki.","Itu adalah mainan kakak perempuan."],correct:0},
-		{id:19,text:"Ini adalah buku saya. zhè shì wǒ de shū", options:["这是我的书。","这是我的笔。","这是我的包。","这是我的钱。"],correct:0},
-		{id:20,text:"Itu buku tulis siapa? nà shì shéi de běn zi", options:["那是谁的本子？","那是谁的尺子？","那是谁的帽子？","那是谁的包子？"],correct:0}
+		{id:1,text:"两 liǎnɡ ......", options:["2","1","3","4"],correct:0},
+		{id:2,text:"Berapa ......", options:["几 jǐ","以 yǐ","用 yònɡ","有 yǒu"],correct:0},
+		{id:3,text:"阿姨 ā yí ......", options:["bibi","paman","kakek","nenek"],correct:0},
+		{id:4,text:"叔叔 shū shu ......", options:["paman","bibi","kakek","nenek"],correct:0},
+		{id:5,text:"儿子 ér zi ......", options:["anak laki-laki","anak perempuan","paman","bibi"],correct:0},
+		{id:6,text:"Penghapus (karet) ......", options:["橡皮 xiànɡ pí","本子 běn zi","笔 bǐ","书 shū"],correct:0},
+		{id:7,text:"Boleh ......", options:["可以 kě yǐ","几 jǐ","用 yònɡ","什么 shén me"],correct:0},
+		{id:8,text:"我有两 .... 书 。", options:["本 běn","支 zhī","个 ɡè","块 kuài"],correct:0},
+		{id:9,text:"小强有三 .... 笔 。", options:["支 zhī","个 ɡè","块 kuài","本 běn"],correct:0},
+		{id:10,text:"我有一 .... 妹妹 。", options:["个 ɡè","支 zhī","块 kuài","本 běn"],correct:0},
+		{id:11,text:"yī ɡè běn zi", options:["一个本子","一个书包","几个书包","几个本子"],correct:0},
+		{id:12,text:"yī ɡè shū bāo", options:["一个书包","一个本子","几个书包","几个本子"],correct:0},
+		{id:13,text:"liǎnɡ běn shū", options:["两本书","两支笔","几本书","几支笔"],correct:0},
+		{id:14,text:"liǎnɡ zhī bǐ", options:["两支笔","两本书","几本书","几支笔"],correct:0},
+		{id:15,text:"jǐ běn shū", options:["几本书","几支笔","两支笔","两本书"],correct:0},
+		{id:16,text:"哥哥有一个书包。ɡē ɡe yǒu yī ɡè shū bāo", options:["Kakak laki-laki mempunyai 1 buah tas sekolah.","Adik laki-laki mempunyai 1 buah buku tulis.","Kakak perempuan mempunyai 1 buah tas sekolah.","Adik perempuan mempunyai 1 buah buku tulis."],correct:0},
+		{id:17,text:"弟弟有三个本子。dì di yǒu sān ɡè běn zi", options:["Adik laki-laki mempunyai 3 buah buku tulis.","Kakak laki-laki mempunyai 3 buah tas sekolah.","Kakak perempuan mempunyai 2 buah tas sekolah.","Adik perempuan mempunyai 2 buah buku tulis."],correct:0},
+		{id:18,text:"小红有几支笔？xiǎo hónɡ yǒu jǐ zhī bǐ", options:["Xiaohong mempunyai berapa batang pensil?","Xiaohong mempunyai berapa buah buku?","Xiaohong mempunyai berapa buah tas sekolah?","Xiaohong mempunyai berapa orang adik perempuan?"],correct:0},
+		{id:19,text:"Saya mempunyai 2 buah buku.  wǒ yǒu liǎnɡ běn shū", options:["我有两本书。","我有一本书。","我有三本书。","我有四本书。"],correct:0},
+		{id:20,text:"Kamu mempunyai berapa adik perempuan?  nǐ yǒu jǐ ɡè mèi mei", options:["你有几个妹妹？","你有几个姐姐？","你有几个哥哥？","你有几个弟弟？"],correct:0}
     ];
 
     let currentQuestions = [];      // 存储 shuffle 之后带 shuffledOptions & shuffledCorrect 的题目
