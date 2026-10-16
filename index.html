@@ -400,8 +400,8 @@
 <div class="container">
     <img src="SD.png" alt="logo sekolah" class="logo" onerror="this.style.display='none'">
 
-    <h1>四年级第一学期第三课汉语测验通关练习</h1>
-    <div style="text-align: center;"><h2>✨Soal Latihan Sumatif Bahasa Mandarin Kelas IV Semester 1 Bab. 3✨</h2></div>
+    <h1>四年级汉语第一学期第四课测验通关练习</h1>
+    <div style="text-align: center;"><h2>✨Soal Latihan Sumatif Bahasa Mandarin Kelas IV Semester 1 Bab. 4✨</h2></div>
 
     <div class="left-title">🎯 选择题 Pilihan Ganda</div>
 
@@ -431,26 +431,26 @@
 <script>
     // ---------- 原始题库，全面包含  年级知识点 ----------
     const rawQuestions = [
-		{id:1,text:"家 jiā ......", options:["rumah","kantin","sekolah","taman"],correct:0},
-		{id:2,text:"Sekolah ......", options:["学校 xué xiào","食堂 shí tánɡ","公园 ɡōnɡ yuán","家 jiā"],correct:0},
-		{id:3,text:"食堂 shí tánɡ ......", options:["kantin","rumah","sekolah","kantor"],correct:0},
-		{id:4,text:"Komputer ......", options:["电脑 diàn nǎo","自行车zì xínɡ chē","雨伞 yǔ sǎn","照片 zhào piàn"],correct:0},
-		{id:5,text:"自行车 zì xínɡ chē ......", options:["sepeda","komputer","kantin","payung"],correct:0},
-		{id:6,text:"雨伞 yǔ sǎn ......", options:["payung","komputer","sepeda","rumah"],correct:0},
-		{id:7,text:"Kamus ......", options:["字典 zì diǎn","照片 zhào piàn","电脑 diàn nǎo","雨伞 yǔ sǎn"],correct:0},
-		{id:8,text:"照片 zhào piàn ......", options:["foto","kamus","komputer","sepeda"],correct:0},
-		{id:9,text:"没有 méi yǒu ......", options:["tidak punya","boleh","punya","punya atau tidak"],correct:0},
-		{id:10,text:"Punya atau tidak ......", options:["有没有 yǒu méi yǒu","可以 kě yǐ","用 yònɡ","没有 méi yǒu"],correct:0},
-		{id:11,text:"xué xiào ......", options:["学校","食堂","电脑","字典"],correct:0},
-		{id:12,text:"shí tánɡ ......", options:["食堂","学校","电脑","字典"],correct:0},
-		{id:13,text:"diàn nǎo ......", options:["电脑","照片","雨伞","食堂"],correct:0},
-		{id:14,text:"zì xínɡ chē ......", options:["自行车","圆珠笔","卷笔刀","笔记本"],correct:0},
-		{id:15,text:"yǒu méi yǒu ......", options:["有没有","是不是","对不对","好不好"],correct:0},
-		{id:16,text:"wǒ yǒu yī zhānɡ zhào piàn<br>我有一张照片。", options:["Saya mempunyai 1 lembar foto.","Saya mempunyai 1 unit komputer.","Saya mempunyai 1 buah tas sekolah.","Saya mempunyai 1 buah kamus."],correct:0},
-		{id:17,text:"nǐ yǒu méi yǒu zì xínɡ chē<br>你有没有自行车？", options:["Kamu punya sepeda atau tidak?","Kamu punya kamus atau tidak?","Kamu punya komputer atau tidak?","Kamu punya payung atau tidak?"],correct:0},
-		{id:18,text:"wǒ jiā yǒu liǎnɡ tái diàn nǎo<br>我家有两台电脑。", options:["Di rumah saya ada 2 unit komputer.","Di rumah saya ada 1 unit komputer.","Di rumah saya ada 2 buah meja.","Di rumah saya ada 1 buah lemari."],correct:0},
-		{id:19,text:"Saya punya sepeda.<br>wǒ yǒu zì xínɡ chē", options:["我有自行车。","我有圆珠笔。","我有卷笔刀。","我有笔记本。"],correct:0},
-		{id:20,text:"Saya punya 1 unit komputer.<br>wǒ yǒu yī tái diàn nǎo", options:["我有一台电脑。","我有一张照片。","我有一台电视。","我有一本字典。"],correct:0}
+		{id:1,text:"上 shànɡ ......", options:["atas","bawah","kiri","kanan"],correct:0},
+		{id:2,text:"Di bawah ......", options:["下边 xià biān","上边 shànɡ biān","左边 zuǒ biān","右边 yòu biān"],correct:0},
+		{id:3,text:"左边 zuǒ biān ......", options:["sebelah kiri","sebelah kanan","di atas","di bawah"],correct:0},
+		{id:4,text:"Sebelah kanan ......", options:["右边 yòu biān","左边 zuǒ biān","下边 xià biān","上边 shànɡ biān"],correct:0},
+		{id:5,text:"在 zài ......", options:["di","ke","kemana","kepada"],correct:0},
+		{id:6,text:"图书馆 tú shū ɡuǎn ......", options:["perpustakaan","sekolah","rak buku","meja"],correct:0},
+		{id:7,text:"Rak buku ......", options:["书架 shū jià","书包 shū bāo","桌子 zhuō zi","教室 jiào shì"],correct:0},
+		{id:8,text:"桌子 zhuō zi ......", options:["meja","rak buku","sekolah","perpustakaan"],correct:0},
+		{id:9,text:"哪儿 nǎ er ......", options:["dimana","siapa","apakah","berapa"],correct:0},
+		{id:10,text:"Ruang kelas ......", options:["教室 jiào shì","桌子 zhuō zi","书架 shū jià","书包 shū bāo"],correct:0},
+		{id:11,text:"shū jià", options:["书架","课桌","白板","电脑"],correct:0},
+		{id:12,text:"nǎ er", options:["哪儿","什么","多少","这儿"],correct:0},
+		{id:13,text:"jiào shì", options:["教室","厕所","食堂","操场"],correct:0},
+		{id:14,text:"tú shū ɡuǎn", options:["图书馆","办公室","洗手间","实验室"],correct:0},
+		{id:15,text:"xià biān", options:["下边","上边","左边","右边"],correct:0},
+		{id:16,text:"jiàoshì zài túshūɡuǎn zuǒbiān<br>教 室 在 图 书 馆 左 边 。", options:["Ruang kelas di sebeleh kiri perpustakaan.","Ruang kelas di sebeleh kiri kantor.","Ruang kelas di sebeleh kiri UKS.","Ruang kelas di sebeleh kanan perpustakaan."],correct:0},
+		{id:17,text:"mèimei zài māma de yòubiān<br>妹 妹 在 妈 妈 的 右 边 。", options:["Adik perempuan di sebelah kanan ibu.","Adik perempuan di sebelah kiri ibu.","Kakak perempuan di sebelah kanan ibu.","Kakak perempuan di sebelah kiri ibu."],correct:0},
+		{id:18,text:"shūbāo zài zhuōzi xiàbiān<br>书 包 在 桌 子 下 边 。", options:["Tas sekolah di bawah meja.","Tas sekolah di atas meja.","Tas sekolah di bawah kursi.","Tas sekolah di atas kursi."],correct:0},
+		{id:19,text:"Buku di (atas) rak buku.<br>shū zài shū jià shànɡ", options:["书在书架上。","书在课桌上。","书在书包里。","笔在桌子上。"],correct:0},
+		{id:20,text:"Perpustakaan di mana?<br>tú shū ɡuǎn zài nǎ er", options:["图书馆在哪儿？","实验室在哪儿？","办公室在哪儿？","洗手间在哪儿？"],correct:0}
     ];
 
     let currentQuestions = [];      // 存储 shuffle 之后带 shuffledOptions & shuffledCorrect 的题目
