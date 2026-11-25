@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>考试模拟练习 | 趣味闯关</title>
+    <title>考试模拟练习 | Latihan SAS Bahasa Mandarin Kelas 4</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* 系统优先字体，适应手机/电脑，保证可读性 */
             font-family: system-ui, 'Segoe UI', 'Poppins', 'Roboto', 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
         }
 
         body {
-            /* 统一浅蓝色背景整体氛围，从柔和的天蓝到通透的水蓝 */
             background: linear-gradient(135deg, #c2e0ff 0%, #b3d9ff 100%);
             min-height: 100vh;
             padding: 30px 20px;
             position: relative;
         }
 
-        /* 装饰光晕元素，依然保持浅蓝氛围 */
         body::before {
             content: "";
             position: fixed;
@@ -48,11 +45,10 @@
             z-index: 0;
         }
 
-        /* 主卡片容器为浅蓝白色调，保证在统一蓝色背景中仍有层次感且舒适 */
         .container {
             max-width: 950px;
             margin: 0 auto;
-            background: #eef6fe;   /* 浅蓝底色，与body背景协奏但更亮 */
+            background: #eef6fe;
             backdrop-filter: blur(2px);
             border-radius: 48px;
             box-shadow: 0 25px 50px -12px rgba(0, 40, 70, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
@@ -111,7 +107,6 @@
             background: none;
         }
 
-        /* 进度条 */
         .progress-bar {
             height: 10px;
             background-color: #cae4f5;
@@ -129,7 +124,6 @@
             box-shadow: 0 0 6px #7bdaa4;
         }
 
-        /* 题目卡片：半透白，保持清爽 */
         .question {
             margin-bottom: 28px;
             padding: 22px 24px;
@@ -232,7 +226,6 @@
             font-weight: bold;
         }
 
-        /* 按钮组 */
         .controls {
             display: flex;
             justify-content: center;
@@ -274,7 +267,6 @@
             box-shadow: 0 6px 14px rgba(0,0,0,0.05);
         }
 
-        /* 结果面板调整为轻柔蓝色背景 */
         .result {
             text-align: center;
             padding: 32px 28px;
@@ -336,7 +328,6 @@
             color: #146b3a;
         }
 
-        /* 完全响应式 + 字体自适应增强 */
         @media (max-width: 650px) {
             .container {
                 padding: 20px 18px;
@@ -366,7 +357,6 @@
             }
         }
 
-        /* 确保所有文字在任何设备上都清晰可读 */
         .fineprint {
             text-align: center;
             margin-top: 25px;
@@ -381,7 +371,6 @@
         .option {
             word-break: break-word;
         }
-        /* 针对可能的小字号加强 */
         @media (max-width: 480px) {
             .option {
                 font-size: 0.85rem;
@@ -399,9 +388,8 @@
 <body>
 <div class="container">
     <img src="SD.png" alt="logo sekolah" class="logo" onerror="this.style.display='none'">
-
-    <h1>四年级汉语第一学期第五课测验通关练习</h1>
-    <div style="text-align: center;"><h2>✨Soal Latihan Sumatif Bahasa Mandarin Kelas IV Semester 1 Bab. 5✨</h2></div>
+	
+    <div style="text-align: center;"><h2>✨Latihan Soal SAS Bahasa Mandarin Kelas IV Semester Ganjil✨</h2></div>
 
     <div class="left-title">🎯 选择题 Pilihan Ganda</div>
 
@@ -429,35 +417,53 @@
 </div>
 
 <script>
-    // ---------- 原始题库，全面包含  年级知识点 ----------
     const rawQuestions = [
-		{id:1,text:"房间 fánɡ jiān ......", options:["kamar","lemari pakaian","meja bundar","ranjang"],correct:0},
-		{id:2,text:"Di sini ......", options:["这儿 zhèr","那儿 nàr","上面 shànɡ miàn","下面 xià miàn"],correct:0},
-		{id:3,text:"床 chuánɡ ......", options:["ranjang","lemari pakaian","meja bundar","kamar"],correct:0},
-		{id:4,text:"Lemari pakaian ......", options:["衣柜 yī ɡuì","圆桌 yuán zhuō","足球 zú qiú","书架 shū jià"],correct:0},
-		{id:5,text:"圆桌 yuán zhuō ......", options:["meja bundar","lemari pakaian","kamar","ranjang"],correct:0},
-		{id:6,text:"Tangan ......", options:["手 shǒu","脚 jiǎo","嘴 zuǐ","头 tóu"],correct:0},
-		{id:7,text:"嘴 zuǐ ......", options:["mulut","mata","tangan","hidung"],correct:0},
-		{id:8,text:"Hidung ......", options:["鼻子 bí zi","眼睛 yǎn jinɡ","耳朵 ěr duo","眉毛 méi mao"],correct:0},
-		{id:9,text:"眼睛 yǎn jinɡ ......", options:["mata","tangan","mulut","hidung"],correct:0},
-		{id:10,text:"Telinga ......", options:["耳朵 ěr duo","眼睛 yǎn jinɡ","鼻子 bí zi","眉毛 méi mao"],correct:0},
-		{id:11,text:"fánɡ jiān", options:["房间","衣柜","圆桌","电脑"],correct:0},
-		{id:12,text:"zhè er", options:["这儿","那儿","这些","哪儿"],correct:0},
-		{id:13,text:"yī ɡuì", options:["衣柜","圆桌","电脑","书架"],correct:0},
-		{id:14,text:"yuán zhuō", options:["圆桌","房间","衣柜","电脑"],correct:0},
-		{id:15,text:"ěr duo", options:["耳朵","眼睛","眉毛","鼻子"],correct:0},
-		{id:16,text:"wǒ de diàn nǎo zài zhuō zi shànɡ biān<br>我 的 电 脑 在 桌 子 上 边 。", options:["Komputer saya di atas meja.","Komputer saya di bawah meja.","Bola saya di atas meja.","Bola saya di bawah meja."],correct:0},
-		{id:17,text:"zú qiú zài yuán zhuō xià miàn<br>足 球 在 圆 桌 下 面 。", options:["Bola sepak di bawah meja bundar.","Bola sepak di atas meja bundar.","Tas sekolah di bawah meja.","Tas sekolah di atas meja."],correct:0},
-		{id:18,text:"mā ma de yòu biān shì wǒ jiě jie<br>妈 妈 的 右 边 是 我 姐 姐 。", options:["Di sebelah kanan ibu adalah kakak perempuan saya.","Di sebelah kiri ibu adalah kakak perempuan saya.","Di sebelah kanan ibu adalah adik perempuan saya.","Di sebelah kiri ibu adalah adik perempuan saya."],correct:0},
-		{id:19,text:"zhè shì wǒ de fánɡ jiān<br>Ini adalah kamar saya.", options:["这是我的房间。","那是我的房间。","这是我的电脑。","那是我的电脑。"],correct:0},
-		{id:20,text:"zhè er yǒu yī ɡuì<br>Di sini ada lemari pakaian.", options:["这儿有衣柜。","那儿有衣柜。","这儿有圆桌。","那儿有圆桌。"],correct:0}
+        {id: 1, text: "书 shū ......", options: ["buku", "pensil", "tas sekolah", "penggaris"], correct: 0},
+        {id: 2, text: "笔 bǐ ......", options: ["alat untuk menulis", "penggaris", "tas sekolah", "gunting"], correct: 0},
+        {id: 3, text: "书包 shū bāo ......", options: ["tas sekolah", "meja", "penggaris", "pensil"], correct: 0},
+        {id: 4, text: "同桌 tónɡ zhuō ......", options: ["teman semeja", "teman sekolah", "teman bermain", "teman masa kecil"], correct: 0},
+        {id: 5, text: "谁 shéi ......", options: ["siapa", "apakah", "apa", "dimana"], correct: 0},
+        {id: 6, text: "两 liǎnɡ ......", options: ["2", "1", "3", "4"], correct: 0},
+        {id: 7, text: "Berapa ......", options: ["几 jǐ", "以 yǐ", "用 yònɡ", "有 yǒu"], correct: 0},
+        {id: 8, text: "阿姨 ā yí ......", options: ["bibi", "kakek", "paman", "nenek"], correct: 0},
+        {id: 9, text: "叔叔 shū shu ......", options: ["paman", "kakek", "nenek", "bibi"], correct: 0},
+        {id: 10, text: "Boleh ......", options: ["可以 kě yǐ", "几 jǐ", "什么 shén me", "用 yònɡ"], correct: 0},
+        {id: 11, text: "Sekolah ......", options: ["学校 xué xiào", "食堂 shí tánɡ", "家 jiā", "公园 ɡōnɡ yuán"], correct: 0},
+        {id: 12, text: "食堂 shí tánɡ ......", options: ["kantin", "rumah", "sekolah", "kantor"], correct: 0},
+        {id: 13, text: "Komputer ......", options: ["电脑 diàn nǎo", "自行车 zì xínɡ chē", "雨伞 yǔ sǎn", "照片 zhào piàn"], correct: 0},
+        {id: 14, text: "没有 méi yǒu ......", options: ["tidak punya", "boleh", "punya atau tidak", "punya"], correct: 0},
+        {id: 15, text: "Punya atau tidak ......", options: ["有没有 yǒu méi yǒu", "可以 kě yǐ", "用 yònɡ", "没有 méi yǒu"], correct: 0},
+        {id: 16, text: "上面 shànɡ miàn ......", options: ["di atas", "di bawah", "sebelah kanan", "sebelah kiri"], correct: 0},
+        {id: 17, text: "Di bawah ......", options: ["下面 xià miàn", "左边 zuǒ biān", "右边 yòu biān", "上面 shànɡ miàn"], correct: 0},
+        {id: 18, text: "左边 zuǒ biān ......", options: ["sebelah kiri", "di atas", "sebelah kanan", "di bawah"], correct: 0},
+        {id: 19, text: "Sebelah kanan ......", options: ["右边 yòu biān", "左边 zuǒ biān", "下面 xià miàn", "上面 shànɡ miàn"], correct: 0},
+        {id: 20, text: "在 zài ......", options: ["di", "kemana", "ke", "kepada"], correct: 0},
+        {id: 21, text: "房间 fánɡ jiān ......", options: ["kamar", "lemari pakaian", "meja bundar", "ranjang"], correct: 0},
+        {id: 22, text: "Di sini ......", options: ["这儿 zhèr", "那儿 nàr", "上面 shànɡ miàn", "下面 xià miàn"], correct: 0},
+        {id: 23, text: "Rak buku ......", options: ["书架 shū jià", "桌子 zhuō zi", "书包 shū bāo", "教室 jiào shì"], correct: 0},
+        {id: 24, text: "Lemari pakaian ......", options: ["衣柜 yī ɡuì", "圆桌 yuán zhuō", "足球 zú qiú", "书架 shū jià"], correct: 0},
+        {id: 25, text: "家 jiā ......", options: ["rumah", "sekolah", "kantin", "taman"], correct: 0},
+		{id: 26, text: "这是我的 ...... ( shū ) 。", options: ["书", "笔", "桌", "床"], correct: 0},
+		{id: 27, text: "这是小强的 ...... ( bǐ ) 。", options: ["笔", "书", "椅", "球"], correct: 0},
+		{id: 28, text: "我有 ...... ( liǎnɡ ) 本书 。", options: ["两", "四", "六", "八"], correct: 0},
+		{id: 29, text: "我有一个 ...... ( shū bāo ) 。", options: ["书包", "电脑", "书架", "圆桌"], correct: 0},
+		{id: 30, text: "你家有 ...... ( diàn nǎo ) 吗？", options: ["电脑", "书架", "圆桌", "字典"], correct: 0},
+		{id: 31, text: "我 ...... ( méi yǒu ) 字典。", options: ["没有", "这儿", "不是", "左边"], correct: 0},
+		{id: 32, text: "书在 ...... ( shū jià ) 上。", options: ["书架", "桌子", "衣柜", "足球"], correct: 0},
+		{id: 33, text: "我们 ...... ( xué xiào ) 有图书馆。", options: ["学校", "教室", "厕所", "食堂"], correct: 0},
+		{id: 34, text: "这是我的 ...... ( fánɡ jiān )。", options: ["房间", "书架", "衣柜", "电脑"], correct: 0},
+		{id: 35, text: "...... ( zhè er ) 有一张床。", options: ["这儿", "那是", "没有", "上面"], correct: 0},
+		{id: 36, text: "wǒ jiā yǒu liǎnɡ tái diàn nǎo<br>我 家 有 两 台 电 脑 。", options: ["Di rumah saya ada 2 unit komputer.", "Ini adalah tas sekolah saya.", "Saya mempunyai 2 buah buku.", "Ini adalah kamar saya."], correct: 0},
+		{id: 37, text: "mèi mei zài mā ma de yòu biān<br>妹 妹 在 妈 妈 的 右 边 。", options: ["Adik perempuan berada di sebelah kanan ibu.", "Adik perempuan berada di sebelah kiri ibu.", "Kakak perempuan berada di sebelah kanan ibu.", "Kakak perempuan berada di sebelah kiri ibu."], correct: 0},
+		{id: 38, text: "zhè shì wǒ de shū bāo<br>Ini adalah tas sekolah saya.", options: ["这是我的书包。", "这是我的房间。", "这是我的铅笔。", "这是我的桌子。"], correct: 0},
+		{id: 39, text: "wǒ yǒu liǎnɡ běn shū<br>Saya mempunyai 2 buah buku.", options: ["我有两本书。", "我没有电脑。", "我有两支笔。", "我有中文书。"], correct: 0},
+		{id: 40, text: "zhè shì wǒ de fánɡ jiān<br>Ini adalah kamar saya.", options: ["这是我的房间。", "这是我的书包。", "这是我的字典。", "这是我的电脑。"], correct: 0}
     ];
 
-    let currentQuestions = [];      // 存储 shuffle 之后带 shuffledOptions & shuffledCorrect 的题目
-    let userAnswers = {};           // key: 原始id, value: 选项索引(针对shuffled)
+    let currentQuestions = [];
+    let userAnswers = {};
     let isCheckingAnswers = false;
 
-    // Fisher-Yates 洗牌
     function shuffleArray(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -466,7 +472,6 @@
         return arr;
     }
 
-    // 初始化/重置考试: 随机打乱题目顺序 + 每个题目选项乱序
     function initExam() {
         userAnswers = {};
         isCheckingAnswers = false;
@@ -474,10 +479,8 @@
         if (!container) return;
         container.innerHTML = '';
 
-        // 深拷贝原始题目并打乱题目顺序
         let shuffledQuestions = shuffleArray([...rawQuestions.map(q => ({ ...q }))]);
 
-        // 对每个题目，打乱选项顺序并记录新的正确下标
         currentQuestions = shuffledQuestions.map(q => {
             const optWithOrigIdx = q.options.map((opt, idx) => ({ text: opt, origIdx: idx }));
             const shuffledOpts = shuffleArray([...optWithOrigIdx]);
@@ -495,7 +498,6 @@
         updateProgressBar();
     }
 
-    // 渲染题目（支持<br>内嵌）
     function renderQuestions(questions) {
         const container = document.getElementById('questions-container');
         container.innerHTML = '';
@@ -504,7 +506,6 @@
             const qDiv = document.createElement('div');
             qDiv.className = 'question';
             const displayNumber = idx + 1;
-            // 题目文本保留原有HTML（如<br>标签）
             const titleHtml = `<div class="question-title"><span class="q-num">${displayNumber}</span><span>${question.text}</span></div>`;
             const optionsHtml = question.shuffledOptions.map((opt, optIdx) => {
                 return `<li class="option" data-qid="${question.id}" data-val="${optIdx}">${opt}</li>`;
@@ -513,7 +514,6 @@
             container.appendChild(qDiv);
         });
 
-        // 事件委托处理点击
         if (window._optionHandler) {
             container.removeEventListener('click', window._optionHandler);
         }
@@ -525,7 +525,6 @@
             const val = parseInt(optionEl.getAttribute('data-val'));
             if (isNaN(qid) || isNaN(val)) return;
 
-            // 移除同题目其他选项高亮
             const parentOptions = optionEl.parentElement.querySelectorAll('.option');
             parentOptions.forEach(opt => {
                 opt.classList.remove('selected');
@@ -546,7 +545,6 @@
         if (progressEl) progressEl.style.width = `${percent}%`;
     }
 
-    // 提交并批改
     function submitExam() {
         if (isCheckingAnswers) return;
         const totalQ = currentQuestions.length;
@@ -586,7 +584,6 @@
         resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // 高亮正确与错误答案
     function highlightAnswers() {
         isCheckingAnswers = true;
         currentQuestions.forEach(q => {
@@ -606,24 +603,21 @@
                 }
             });
         });
-        // 禁用点击修改
         document.querySelectorAll('.option').forEach(opt => {
             opt.style.cursor = 'default';
         });
     }
 
-    // 重试刷新全部
     function retryExam() {
         isCheckingAnswers = false;
         const resultDiv = document.getElementById('result');
         if (resultDiv) resultDiv.style.display = 'none';
         userAnswers = {};
-        initExam();   // 重新生成顺序与选项乱序
+        initExam();
         updateProgressBar();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // 绑定按钮事件
     document.addEventListener('DOMContentLoaded', () => {
         initExam();
         const submitBtn = document.getElementById('submit-btn');
